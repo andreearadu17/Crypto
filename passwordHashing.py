@@ -2,6 +2,7 @@ import argparse
 import hashlib
 import PySimpleGUI as sg
 
+
 def hash_password(password, hashtype="sha256"):
     x = getattr(hashlib, hashtype)()
     x.update(password.encode())
