@@ -30,7 +30,8 @@ sg.theme('LightGrey1')
 layout = [
     [sg.Text('Enter your message:', size=(15, 1)), sg.InputText(key='-MESSAGE-')], #, password_char='*')],
     [sg.Button('Sign'), sg.Button('Verify')],
-    [sg.Text('Hashed Signature:', size=(15, 1)), sg.Text('', size=(70, 1), key='-OUTPUT-')]
+    [sg.Text('Hashed Signature:', size=(15, 1)), sg.Text('', size=(70, 1), key='-OUTPUT-')],
+    [sg.Text('Verification:', size=(15, 1)), sg.Text('', size=(70, 1), key='-VALID-')]
 ]
 
 
@@ -55,9 +56,9 @@ while True:
         signature = bytes.fromhex(signature_str)
         is_valid = verify_signature(public_key, message, signature)
         if is_valid:
-            window['-OUTPUT-'].update("Signature is valid")
+            window['-VALID-'].update("Signature is valid")
         else:
-            window['-OUTPUT-'].update("Signature is NOT valid")
+            window['-VALID-'].update("Signature is NOT valid")
 
 window.close()
 
