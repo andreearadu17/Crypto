@@ -1,4 +1,4 @@
-import hashlib
+
 import PySimpleGUI as sg
 from Crypto.PublicKey import RSA
 from Crypto.Signature import pkcs1_15
@@ -28,10 +28,10 @@ def verify_signature(public_key, message, signature):
 sg.theme('LightGrey1')
 
 layout = [
-    [sg.Text('Enter your message:', size=(15, 1)), sg.InputText(key='-MESSAGE-')], #, password_char='*')],
+    [sg.Text('Enter your message:', size=(15, 1), font=('Helvetica', 14)), sg.InputText(key='-MESSAGE-', font=('Helvetica', 14))], #, password_char='*')],
     [sg.Button('Sign'), sg.Button('Verify')],
-    [sg.Text('Hashed Signature:', size=(15, 1)), sg.Text('', size=(70, 1), key='-OUTPUT-')],
-    [sg.Text('Verification:', size=(15, 1)), sg.Text('', size=(70, 1), key='-VALID-')]
+    [sg.Text('Signature:', size=(15, 1), font=('Helvetica', 14)), sg.Text('', size=(70, 1), key='-OUTPUT-', font=('Helvetica', 14))],
+    [sg.Text('Verification:', size=(15, 1), font=('Helvetica', 14)), sg.Text('', size=(70, 1), key='-VALID-', font=('Helvetica', 14))]
 ]
 
 

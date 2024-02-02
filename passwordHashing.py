@@ -11,9 +11,9 @@ def hash_password(password, hashtype="sha256"):
 sg.theme('LightGrey1')
 
 layout = [
-    [sg.Text('Password:', size=(10, 1)), sg.InputText(key='-PASSWORD-')], #, password_char='*')],
+    [sg.Text('Password:', size=(10, 1), font=('Helvetica', 14)), sg.InputText(key='-PASSWORD-', font=('Helvetica', 14))], #, password_char='*')],
     [sg.Button('Hash'), sg.Button('Exit')],
-    [sg.Text('Hashed Password:', size=(15, 1)), sg.Text('', size=(50, 1), key='-OUTPUT-')]
+    [sg.Text('Hashed Password:', size=(15, 1), font=('Helvetica', 14)), sg.Text('', size=(80, 1), key='-OUTPUT-', font=('Helvetica', 14))]
 ]
 
 window = sg.Window('Password Hasher', layout, resizable=True, finalize=True, element_justification='center')

@@ -10,11 +10,11 @@ def main():
 
     layout = [
         [sg.Text('File 1:', size=(8, 1)), sg.InputText(key='file1', size=(30, 1)), sg.FileBrowse(), sg.Button('Load Content 1')],
-        [sg.Multiline(size=(60, 10), key='content1', disabled=True, autoscroll=True)],
+        [sg.Multiline(size=(80, 10), key='content1', disabled=True, autoscroll=True, font=('Helvetica', 14))],
         [sg.Text('File 2:', size=(8, 1)), sg.InputText(key='file2', size=(30, 1)), sg.FileBrowse(), sg.Button('Load Content 2')],
-        [sg.Multiline(size=(60, 10), key='content2', disabled=True, autoscroll=True)],
+        [sg.Multiline(size=(80, 10), key='content2', disabled=True, autoscroll=True, font=('Helvetica', 14))],
         [sg.Button('Calculate Hashes', size=(15, 1)), sg.Button('Exit', size=(15, 1))],
-        [sg.Multiline(size=(60, 10), key='output', disabled=True, autoscroll=True)]
+        [sg.Multiline(size=(80, 10), key='output', disabled=True, autoscroll=True, font=('Helvetica', 14))]
     ]
 
     window = sg.Window('File Hash Calculator', layout, resizable=True)
